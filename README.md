@@ -8,5 +8,6 @@ Common bioinformatics database construction
 wget -c https://ftp.ncbi.nlm.nih.gov/pub/taxonomy/new_taxdump/new_taxdump.tar.gz
 tar -zxvf new_taxdump.tar.gz
 lineage2tax.py fullnamelineage.dmp >species.taxonomy
+get_taxid.py rankedlineage.dmp --kingdom Bacteria >Bacteria.taxid
 
 ```
