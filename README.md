@@ -7,6 +7,6 @@ Common bioinformatics database construction
 ```
 wget -c https://ftp.ncbi.nlm.nih.gov/pub/taxonomy/new_taxdump/new_taxdump.tar.gz
 tar -zxvf new_taxdump.tar.gz
-fullnamelineage2taxonomy.py fullnamelineage.dmp >species.taxonomy
+lineage2tax.py fullnamelineage.dmp >species.taxonomy
 
 ```
