@@ -23,3 +23,11 @@ zcat family.txt.gz |awk -F '\t' '{print $1"\t"$2"\t"$4"\t"$19"\t"$30}' >family.t
 gunzip Rfam.cm.gz
 cmpress Rfam.cm
 ```
+## 3. Refseq
+* Download the database
+```
+https://ftp.ncbi.nlm.nih.gov/blast/db/
+wget -c https://ftp.ncbi.nlm.nih.gov/blast/db/refseq_protein.*.tar.gz .
+
+
+```
