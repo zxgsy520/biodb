@@ -31,3 +31,8 @@ wget -c https://ftp.ncbi.nlm.nih.gov/blast/db/refseq_protein.*.tar.gz .
 blastdbcmd -db refseq_protein -dbtype "prot" -taxidlist bacteria.taxid -out bacteria.protein.fa
 diamond makedb -d bacteria.refseq.dmnd --in bacteria.protein.fa
 ```
+
+## 4.rebase
+* Download the database
+```
+```
