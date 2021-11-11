@@ -41,3 +41,8 @@ http://rebase.neb.com//rebase.seqs.html
 ```
 wget -c ftp://ftp.neb.com/pub/rebase/protein_seqs.txt
 ```
+
+## 5.TIGRFAMs
+```
+https://ftp.ncbi.nlm.nih.gov/hmm/TIGRFAMs/
+```
