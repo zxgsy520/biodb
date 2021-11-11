@@ -32,6 +32,9 @@ cmpress Rfam.cm
 ```
 
 ## 4.rebase
+* R：编码限制性核酸内切酶
+* M：编码限制性甲基化酶
+* S：编码限制性酶和甲基化酶的协同表达
 * Download the database
 http://rebase.neb.com/rebase/rebase.html
 http://rebase.neb.com//rebase.seqs.html
