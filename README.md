@@ -25,11 +25,11 @@ cmpress Rfam.cm
 ```
 ## 3. Refseq
 * Download the database
+http://rebase.neb.com/rebase/rebase.html
+http://rebase.neb.com//rebase.seqs.html
 ```
-https://ftp.ncbi.nlm.nih.gov/blast/db/
-wget -c https://ftp.ncbi.nlm.nih.gov/blast/db/refseq_protein.*.tar.gz .
-blastdbcmd -db refseq_protein -dbtype "prot" -taxidlist bacteria.taxid -out bacteria.protein.fa
-diamond makedb -d bacteria.refseq.dmnd --in bacteria.protein.fa
+wget -c ftp://ftp.neb.com/pub/rebase/protein_seqs.txt
+
 ```
 
 ## 4.rebase
