@@ -25,14 +25,16 @@ cmpress Rfam.cm
 ```
 ## 3. Refseq
 * Download the database
-http://rebase.neb.com/rebase/rebase.html
-http://rebase.neb.com//rebase.seqs.html
+
 ```
-wget -c ftp://ftp.neb.com/pub/rebase/protein_seqs.txt
+
 
 ```
 
 ## 4.rebase
 * Download the database
+http://rebase.neb.com/rebase/rebase.html
+http://rebase.neb.com//rebase.seqs.html
 ```
+wget -c ftp://ftp.neb.com/pub/rebase/protein_seqs.txt
 ```
