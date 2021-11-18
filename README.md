@@ -46,3 +46,10 @@ wget -c ftp://ftp.neb.com/pub/rebase/protein_seqs.txt
 ```
 https://ftp.ncbi.nlm.nih.gov/hmm/TIGRFAMs/
 ```
+
+
+## kraken
+[kraken-db](https://benlangmead.github.io/aws-indexes/k2)
+```
+
+```
