@@ -55,5 +55,5 @@ https://ftp.ncbi.nlm.nih.gov/hmm/TIGRFAMs/
 ```
 
 ## KEGG
-.KEGG(https://www.kegg.jp/)数据连接
-.[ko00001.keg](https://www.kegg.jp/brite/ko00001)
+* KEGG(https://www.kegg.jp/)数据连接
+* [ko00001.keg](https://www.kegg.jp/brite/ko00001)
