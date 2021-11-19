@@ -71,3 +71,7 @@ The way python reads COG files:open(file, encoding='ISO 8859-1')
 rename_cogid.py cog-20.fa -c cog-20.cog.csv >cog.fasta
 diamond makedb --in cog.fasta -d cog
 ```
+## CAZy
+* [CAZy](http://www.cazy.org/)
+* [CAZydb](https://bcb.unl.edu/dbCAN2/download/Databases/)
+* 
