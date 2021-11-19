@@ -62,3 +62,12 @@ https://www.kegg.jp/entry/ko:K23120
 ```
 ## COG
 The way python reads COG files:open(file, encoding='ISO 8859-1')
+[cog]
+[cog-20.fa.gz](https://ftp.ncbi.nih.gov/pub/COG/COG2020/data/cog-20.fa.gz)
+[cog-20.def.tab](https://ftp.ncbi.nih.gov/pub/COG/COG2020/data/cog-20.def.tab)
+[fun-20.tab](https://ftp.ncbi.nih.gov/pub/COG/COG2020/data/fun-20.tab)
+[cog-20.cog.csv](https://ftp.ncbi.nih.gov/pub/COG/COG2020/data/cog-20.cog.csv)
+```
+rename_cogid.py cog-20.fa -c cog-20.cog.csv >cog.fasta
+diamond makedb --in cog.fasta -d cog
+```
