@@ -51,6 +51,7 @@ https://ftp.ncbi.nlm.nih.gov/hmm/TIGRFAMs/
 ## kraken
 [kraken-db](https://benlangmead.github.io/aws-indexes/k2)
 ```
+wget -c https://genome-idx.s3.amazonaws.com/kraken/k2_viral_20210517.tar.gz
 
 ```
 
