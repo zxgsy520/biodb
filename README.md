@@ -60,3 +60,5 @@ https://ftp.ncbi.nlm.nih.gov/hmm/TIGRFAMs/
 ```
 https://www.kegg.jp/entry/ko:K23120
 ```
+## COG
+The way python reads COG files:open(file, encoding='ISO 8859-1')
