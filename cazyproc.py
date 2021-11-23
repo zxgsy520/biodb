@@ -7,7 +7,10 @@ CAZY_CLASS = {
     "PL": "Polysaccharide Lyases",
     "CE": "Carbohydrate Esterases",
     "AA": "Auxiliary Activities",
-    "CBM": "Carbohydrate-Binding Modules"}
+    "CBM": "Carbohydrate-Binding Modules",
+    "SLH": "S-layer homology domain",
+    "Cohesin": "Cohesin domain",
+    "Dockerin": "Dockerin domain"}
 
 
 import re
