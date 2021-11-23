@@ -101,6 +101,13 @@ def output_cazy(cazy, activ, subfam, output):
                 notes.append(typeid)
                 descs.append(activ_dict[typeid])
                 classs.append(re.search("(\D+)", typeid).group(1))
+            else:
+                if typeid not in CAZY_CLASS:
+                    continue
+                notes.append(typeid)
+                descs.append(line[-1])
+                classs.append(typeid)
+                
 
         if seqid in subfam_dit:
             typeid = subfam_dit[seqid][1]
@@ -111,6 +118,7 @@ def output_cazy(cazy, activ, subfam, output):
                     notes.append(typeid)
                     classs.append(re.search("(\D+)", typeid).group(1))
                     descs.append(activ_dict[typeid])
+            
         print("{}\t{}\t{}\t{}\t{}".format(line[0], refseq, ";".join(notes), ";".join(classs), ";".join(descs)))
 
         for clasid in classs:
@@ -121,9 +129,9 @@ def output_cazy(cazy, activ, subfam, output):
 
     output = open(output, "w")
 
-    output.write("#class\tgene\tnumber\tdesc\n")
+    output.write("#class\tnumber\tdesc\tgene\n")
     for line in sorted(cazy_dict.items(),key = lambda x:len(x[1])):
-        output.write("{}\t{}\t{}\t{}\n".format(line[0], ";".join(line[1]), len(line[1]), CAZY_CLASS[line[0]]))
+        output.write("{}\t{}\t{}\t{}\n".format(line[0], len(line[1]), CAZY_CLASS[line[0]], ";".join(line[1])))
     output.close()
 
 
