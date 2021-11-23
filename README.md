@@ -77,4 +77,6 @@ diamond makedb --in cog.fasta -d cog
 * [CAZydb](https://bcb.unl.edu/dbCAN2/download/Databases/)
 * [SLH](https://www.ebi.ac.uk/interpro/entry/IPR001119)
 * [Cohesin](https://www.ebi.ac.uk/interpro/entry/IPR002102)
-* 
+```
+deal_with_cazy.py IPR002102.fasta -d IPR001119.tsv >CAZy.add.fasta
+```
