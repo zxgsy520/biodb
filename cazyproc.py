@@ -12,15 +12,16 @@ CAZY_CLASS = {
     "Cohesin": "Cohesin domain",
     "Dockerin": "Dockerin domain"}
 
-
 import re
 import sys
 import argparse
 import logging
 
+from collections import OrderedDict
+
 LOG = logging.getLogger(__name__)
 
-__version__ = "1.1.0"
+__version__ = "1.2.0"
 __author__ = ("Xingguo Zhang",)
 __email__ = "invicoun@foxmail.com"
 __all__ = []
@@ -83,7 +84,10 @@ def output_cazy(cazy, activ, subfam, output):
         subfam_dit = read_subfam(subfam)
     else:
         subfam_dit = {}
-    cazy_dict = {}
+
+    cazy_dict = OrderedDict(GH=[], GT=[], PL=[], CE=[],
+                            AA=[], CBM=[], SLH=[],
+                            Cohesin=[], Dockerin=[])
 
     print("#qseqid\tsseqid\tnote\tclass\tdesc")
     for line in read_tsv(cazy, '\t'):
@@ -123,15 +127,14 @@ def output_cazy(cazy, activ, subfam, output):
 
         for clasid in classs:
             if clasid not in cazy_dict:
-                cazy_dict[clasid] = [line[0]]
                 continue
             cazy_dict[clasid].append(line[0])
 
     output = open(output, "w")
 
     output.write("#class\tnumber\tdesc\tgene\n")
-    for line in sorted(cazy_dict.items(),key = lambda x:len(x[1])):
-        output.write("{}\t{}\t{}\t{}\n".format(line[0], len(line[1]), CAZY_CLASS[line[0]], ";".join(line[1])))
+    for i in cazy_dict:
+        output.write("{}\t{}\t{}\t{}\n".format(i, len(cazy_dict[i]), CAZY_CLASS[i], ";".join(cazy_dict[i])))
     output.close()
 
 
