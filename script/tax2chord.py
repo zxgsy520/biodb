@@ -11,7 +11,7 @@ from collections import OrderedDict
 
 LOG = logging.getLogger(__name__)
 
-__version__ = "1.0.0"
+__version__ = "1.1.0"
 __author__ = ("Xingguo Zhang",)
 __email__ = "invicoun@foxmail.com"
 __all__ = []
@@ -32,36 +32,33 @@ def read_tsv(file, sep=None):
 
 def reads_function_tax(file, display=10):
 
+    alld = {}
     data = OrderedDict()
-    other = 0
-    temp = ""
+    startd = {}
     n = 0
 
     for line in read_tsv(file, "\t"):
         if line[1] == "Unbacteria":
             continue
         if line[0] not in data:
-            if other:
-                data[temp]["Other"] = other
             data[line[0]] = OrderedDict()
-            other = 0
-            temp = line[0]
+            alld[line[0]] = {}
+            startd[line[0]] = 0
             n = 0
         if line[1] != "other":
             n += 1
         if n <= display and line[1] != "other":
             data[line[0]][line[1]] = int(line[2])
-        else:
-            other += int(line[2])
-    if other:
-        data[temp]["Other"] = other
 
-    return data
+        alld[line[0]][line[1]] = int(line[2])
+        startd[line[0]] += int(line[2])
+
+    return alld, data, startd
 
 
 def tax2chord(file, display=10):
 
-    data = reads_function_tax(file, display=10)
+    alld, data, startd = reads_function_tax(file, display)
 
     classify = []
     species = []
@@ -74,17 +71,26 @@ def tax2chord(file, display=10):
 
     print("Classify\t%s" % "\t".join(classify))
 
+    data = {}
     for i in species:
         temp = []
         for j in classify:
             if j not in data:
+                data[j] = 0
+            if j not in alld:
                 temp.append("0")
                 continue
-            if i not in data[j]:
+            if i not in alld[j]:
                 temp.append("0")
                 continue
-            temp.append(str(data[j][i]))
+            temp.append(str(alld[j][i]))
+            data[j] += alld[j][i]
         print("%s\t%s" % (i, "\t".join(temp)))
+
+    temp = []
+    for i in classify:
+        temp.append(str(startd[i] - data[i]))
+    print("Other\t%s" % "\t".join(temp))
 
     return 0
 
