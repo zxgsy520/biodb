@@ -72,15 +72,6 @@ The way python reads COG files:open(file, encoding='ISO 8859-1')
 rename_cogid.py cog-20.fa -c cog-20.cog.csv >cog.fasta
 diamond makedb --in cog.fasta -d cog
 
-
-#----------------------
-#individuation
-grep_id.py all.CAZy.out -i ${sample}.id >${sample}.CAZy.out
-cazyproc.py ${sample}.CAZy.out --activ CAZy.activities.txt \
-  --subfam CAZy.subfam.txt -o ${sample}.cazy_classify.tsv >${sample}.cazy.tsv
-plot_cazy.py ${sample}.cazy_classify.tsv -p ${sample}
-get_cazy_tax.py ${sample}.cazy.tsv --tax NR_anno_tax.txt >${sample}.CAZy_tax.tsv
-
 ```
 ## CAZy
 * [CAZy](http://www.cazy.org/)
@@ -91,4 +82,16 @@ get_cazy_tax.py ${sample}.cazy.tsv --tax NR_anno_tax.txt >${sample}.CAZy_tax.tsv
 * [PUL](https://bcb.unl.edu/dbcan_pul/Webserver/static/DBCAN-PUL/PUL.faa)
 ```
 deal_with_cazy.py IPR002102.fasta -d IPR001119.tsv >CAZy.add.fasta
+
+#----------------------
+#individuation
+grep_id.py all.CAZy.out -i ${sample}.id >${sample}.CAZy.out
+cazyproc.py ${sample}.CAZy.out --activ CAZy.activities.txt \
+  --subfam CAZy.subfam.txt -o ${sample}.cazy_classify.tsv >${sample}.cazy.tsv
+plot_cazy.py ${sample}.cazy_classify.tsv -p ${sample}
+get_cazy_tax.py ${sample}.cazy.tsv --tax NR_anno_tax.txt >${sample}.CAZy_tax.tsv
+stat_function_class.py ${sample}.CAZy_tax.tsv  --kingdom Bacteria --level p > ${sample}.phylum_stat_cazy_tax.tsv
+tax2chord.py ${sample}.phylum_stat_cazy_tax.tsv --display 5 >${sample}.phylum_chord.tsv
+
+
 ```
