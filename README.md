@@ -71,6 +71,16 @@ The way python reads COG files:open(file, encoding='ISO 8859-1')
 ```
 rename_cogid.py cog-20.fa -c cog-20.cog.csv >cog.fasta
 diamond makedb --in cog.fasta -d cog
+
+
+#----------------------
+#individuation
+grep_id.py all.CAZy.out -i ${sample}.id >${sample}.CAZy.out
+cazyproc.py ${sample}.CAZy.out --activ CAZy.activities.txt \
+  --subfam CAZy.subfam.txt -o ${sample}.cazy_classify.tsv >${sample}.cazy.tsv
+plot_cazy.py ${sample}.cazy_classify.tsv -p ${sample}
+get_cazy_tax.py ${sample}.cazy.tsv --tax NR_anno_tax.txt >${sample}.CAZy_tax.tsv
+
 ```
 ## CAZy
 * [CAZy](http://www.cazy.org/)
