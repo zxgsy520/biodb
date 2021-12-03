@@ -20,8 +20,19 @@ wget -c https://github.com/zxgsy520/biodb/archive/refs/heads/main.zip
 unzip main.zip
 
 ```
+## Options and usage
+### Draw a circle graph locally
+* [visualize](http://mkweb.bcgsc.ca/tableviewer/visualize/)
+```
+parse-table -conf parse-table.conf -file txt.tsv -segment_order=ascii,size_desc -placement_order=row,col -interpolate_type count -color_source row -transparency 1 -fade_transparency 0 -ribbon_layer_order=size_asc >parsed.txt
+cat  parsed.txt |make-conf -dir data
+circos -conf chord_circos.conf 
+```
+<p align="center">
+  <img src="https://github.com/zxgsy520/biodb/docs/order_chord.png" width = "300" height = "300" alt="Species functional circle diagram"/>
+</p>
 
-### Database introduction
+## Database introduction
 
 ### 1.taxonomy （Substance classification database）
 * Download the database
