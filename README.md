@@ -29,7 +29,7 @@ cat  parsed.txt |make-conf -dir data
 circos -conf chord_circos.conf 
 ```
 <p align="center">
-  <img src="https://github.com/zxgsy520/biodb/docs/order_chord.png" width = "300" height = "300" alt="Species functional circle diagram"/>
+  <img src="https://github.com/zxgsy520/biodb/blob/main/docs/order_chord.png" width = "300" height = "300" alt="Species functional circle diagram"/>
 </p>
 
 ## Database introduction
