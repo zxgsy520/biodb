@@ -8,20 +8,20 @@ Installation and analysis of common databases
   * [numpy](https://numpy.org/doc/stable/index.html)
 ## Installation
 ```
-git clone https://github.com/zxgsy520/biotool.git
-cd  biotool/bin
-chmod 755 *
+git clone https://github.com/zxgsy520/biodb.git
+cd  biodb/bin    
+chmod 755 *    #Linux system can be used directly
 ```
 or
 ```
-wget -c https://github.com/zxgsy520/biotool/archive/refs/heads/main.zip
+wget -c https://github.com/zxgsy520/biodb/archive/refs/heads/main.zip
 unzip main.zip
 
 ```
 
+### Database introduction
 
-
-## 1.taxonomy （Substance classification database）
+### 1.taxonomy （Substance classification database）
 * Download the database
 ```
 wget -c https://ftp.ncbi.nlm.nih.gov/pub/taxonomy/new_taxdump/new_taxdump.tar.gz
@@ -32,7 +32,7 @@ get_taxid.py rankedlineage.dmp --kingdom Bacteria >Bacteria.taxid
 ```
 
 
-## 2.Rfam
+### 2.Rfam
 * Download the database
 ```
 wget -c https://ftp.ebi.ac.uk/pub/databases/Rfam/14.6/Rfam.cm.gz
@@ -50,7 +50,7 @@ cmpress Rfam.cm
 
 ```
 
-## 4.rebase
+### 4.rebase
 * R：编码限制性核酸内切酶
 * M：编码限制性甲基化酶
 * S：编码限制性酶和甲基化酶的协同表达
@@ -61,26 +61,26 @@ http://rebase.neb.com//rebase.seqs.html
 wget -c ftp://ftp.neb.com/pub/rebase/protein_seqs.txt
 ```
 
-## 5.TIGRFAMs
+### 5.TIGRFAMs
 ```
 https://ftp.ncbi.nlm.nih.gov/hmm/TIGRFAMs/
 ```
 
 
-## kraken
+### kraken
 [kraken-db](https://benlangmead.github.io/aws-indexes/k2)
 ```
 wget -c https://genome-idx.s3.amazonaws.com/kraken/k2_viral_20210517.tar.gz
 
 ```
 
-## KEGG
+### KEGG
 * [KEGG](https://www.kegg.jp/)数据连接
 * [ko00001.keg](https://www.kegg.jp/brite/ko00001)
 ```
 https://www.kegg.jp/entry/ko:K23120
 ```
-## COG
+### COG
 The way python reads COG files:open(file, encoding='ISO 8859-1')
 * [cog]
 * [cog-20.fa.gz](https://ftp.ncbi.nih.gov/pub/COG/COG2020/data/cog-20.fa.gz)
@@ -92,7 +92,7 @@ rename_cogid.py cog-20.fa -c cog-20.cog.csv >cog.fasta
 diamond makedb --in cog.fasta -d cog
 
 ```
-## CAZy
+### CAZy
 * [CAZy](http://www.cazy.org/)
 * [CAZydb](https://bcb.unl.edu/dbCAN2/download/Databases/)
 * [SLH](https://www.ebi.ac.uk/interpro/entry/IPR001119)
