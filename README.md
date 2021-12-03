@@ -11,6 +11,8 @@ Installation and analysis of common databases
 git clone https://github.com/zxgsy520/biodb.git
 cd  biodb/bin    
 chmod 755 *    #Linux system can be used directly
+cd ../scripts
+chmod 755 *   #Supports all systems but requires python and related packages
 ```
 or
 ```
