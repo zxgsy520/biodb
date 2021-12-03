@@ -1,5 +1,24 @@
 # biodb
-Common bioinformatics database construction
+Installation and analysis of common databases
+
+## Requirements
+* [Python](https://www.python.org/)
+* Three-party python package
+  * [matplotlib](https://matplotlib.org/)
+  * [numpy](https://numpy.org/doc/stable/index.html)
+## Installation
+```
+git clone https://github.com/zxgsy520/biotool.git
+cd  biotool/bin
+chmod 755 *
+```
+or
+```
+wget -c https://github.com/zxgsy520/biotool/archive/refs/heads/main.zip
+unzip main.zip
+
+```
+
 
 
 ## 1.taxonomy （Substance classification database）
