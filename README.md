@@ -57,9 +57,8 @@ cmpress Rfam.cm
 ```
 ## 3. Refseq
 * Download the database
-
+https://ftp.ncbi.nlm.nih.gov/blast/db/
 ```
-
 
 ```
 
