@@ -104,7 +104,7 @@ rename_cogid.py cog-20.fa -c cog-20.cog.csv >cog.fasta
 diamond makedb --in cog.fasta -d cog
 
 ```
-### CAZy
+
 * [CAZy](http://www.cazy.org/)
 * [CAZydb](https://bcb.unl.edu/dbCAN2/download/Databases/)
 * [SLH](https://www.ebi.ac.uk/interpro/entry/IPR001119)
@@ -123,6 +123,9 @@ plot_cazy.py ${sample}.cazy_classify.tsv -p ${sample}
 get_cazy_tax.py ${sample}.cazy.tsv --tax NR_anno_tax.txt >${sample}.CAZy_tax.tsv
 stat_function_class.py ${sample}.CAZy_tax.tsv  --kingdom Bacteria --level p > ${sample}.phylum_stat_cazy_tax.tsv
 tax2chord.py ${sample}.phylum_stat_cazy_tax.tsv --display 5 >${sample}.phylum_chord.tsv
-
-
 ```
+### SwissProt
+```
+wget -c http://ftp.ebi.ac.uk/pub/databases/swissprot/release/uniprot_sprot.fasta.gz
+```
+
