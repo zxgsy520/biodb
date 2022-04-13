@@ -36,11 +36,14 @@ circos -conf chord_circos.conf
 
 ### 1.taxonomy （Substance classification database）
 * Download the database
+[taxonkit](https://github.com/shenwei356/taxonkit)
 ```
 wget -c https://ftp.ncbi.nlm.nih.gov/pub/taxonomy/new_taxdump/new_taxdump.tar.gz
 tar -zxvf new_taxdump.tar.gz
 lineage2tax.py fullnamelineage.dmp >species.taxonomy
 get_taxid.py rankedlineage.dmp --kingdom Bacteria >Bacteria.taxid
+wget -c https://ftp.ncbi.nlm.nih.gov/pub/taxonomy/taxdump.tar.gz
+taxonkit list -j 4 --ids 10239 --data-dir ./taxonomy >Viruses.taxid
 
 ```
 
