@@ -44,7 +44,8 @@ lineage2tax.py fullnamelineage.dmp >species.taxonomy
 get_taxid.py rankedlineage.dmp --kingdom Bacteria >Bacteria.taxid
 wget -c https://ftp.ncbi.nlm.nih.gov/pub/taxonomy/taxdump.tar.gz
 taxonkit list -j 4 --ids 10239 --data-dir ./taxonomy >Viruses.taxid
-
+blastdbcmd -db ../nr -dbtype "prot" -taxidlist Viruses.taxid -out Viruses.fa
+blastdbcmd -db ../nr -dbtype "prot" -taxidlist Viruses.taxid -out  viruses.fasta2_newtaxid -outfmt "%a %T"
 ```
 
 
