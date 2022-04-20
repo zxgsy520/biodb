@@ -47,7 +47,12 @@ taxonkit list -j 4 --ids 10239 --data-dir ./taxonomy >Viruses.taxid
 blastdbcmd -db ../nr -dbtype "prot" -taxidlist Viruses.taxid -out Viruses.fa
 blastdbcmd -db ../nr -dbtype "prot" -taxidlist Viruses.taxid -out  viruses.fasta2_newtaxid -outfmt "%a %T"
 ```
-
+* Generate taxonomy files for kraken annotations （生成分类注释文件）
+```
+taxonkit lineage all.tax.id --data-dir taxonomy --threads 8 | awk '$2!=""' > lineage.txt
+taxonkit reformat lineage.txt --format "k__{k}|p__{p}|c__{c}|o__{o}|f__{f}|g__{g}|s__{s}" --data-dir taxonomy --threads 8 >kraken.temp_taxonomy 
+ print_tax.py kraken.temp_taxonomy >kraken.taxonomy #提取第1和第3列，将真菌的Eukaryota替换为Fungi
+```
 
 ### 2.Rfam
 * Download the database
