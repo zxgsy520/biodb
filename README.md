@@ -64,7 +64,7 @@ zcat family.txt.gz |awk -F '\t' '{print $1"\t"$2"\t"$4"\t"$19"\t"$30}' >family.t
 gunzip Rfam.cm.gz
 cmpress Rfam.cm
 ```
-## 3. Refseq
+### 3. Refseq
 * Download the database
 https://ftp.ncbi.nlm.nih.gov/blast/db/
 ```
@@ -85,6 +85,13 @@ wget -c ftp://ftp.neb.com/pub/rebase/protein_seqs.txt
 ### 5.TIGRFAMs
 ```
 https://ftp.ncbi.nlm.nih.gov/hmm/TIGRFAMs/
+```
+### 6.Nr
+```
+wget -c https://ftp.ncbi.nlm.nih.gov/blast/db/FASTA/nr.gz
+mv nr.gz nr.fa.gz
+gunzip nr.fa.gz
+diamond makedb --in nr.fa --db nr --taxonmap prot.accession2taxid.gz --taxonnodes nodes.dmp --taxonnames names.dmp
 ```
 
 
