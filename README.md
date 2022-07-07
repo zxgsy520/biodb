@@ -121,6 +121,7 @@ diamond makedb --in cog.fasta -d cog
 
 ```
 
+### CAZy
 * [CAZy](http://www.cazy.org/)
 * [CAZydb](https://bcb.unl.edu/dbCAN2/download/Databases/)
 * [SLH](https://www.ebi.ac.uk/interpro/entry/IPR001119)
@@ -145,3 +146,11 @@ tax2chord.py ${sample}.phylum_stat_cazy_tax.tsv --display 5 >${sample}.phylum_ch
 wget -c http://ftp.ebi.ac.uk/pub/databases/swissprot/release/uniprot_sprot.fasta.gz
 ```
 
+### vogdb
+* [vogdb](https://vogdb.org/)
+* [vog_functional_categories.txt](http://fileshare.csb.univie.ac.at/vog/latest/vog_functional_categories.txt)
+* [vog.lca.tsv.gz](http://fileshare.csb.univie.ac.at/vog/latest/vog.lca.tsv.gz)
+* [vog.members.tsv.gz](http://fileshare.csb.univie.ac.at/vog/latest/vog.members.tsv.gz)
+* [vog.annotations.tsv.gz](http://fileshare.csb.univie.ac.at/vog/latest/vog.annotations.tsv.gz)
+* [vog.proteins.all.fa.gz](http://fileshare.csb.univie.ac.at/vog/latest/vog.faa.tar.gz)
+*
