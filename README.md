@@ -153,4 +153,8 @@ wget -c http://ftp.ebi.ac.uk/pub/databases/swissprot/release/uniprot_sprot.fasta
 * [vog.members.tsv.gz](http://fileshare.csb.univie.ac.at/vog/latest/vog.members.tsv.gz)
 * [vog.annotations.tsv.gz](http://fileshare.csb.univie.ac.at/vog/latest/vog.annotations.tsv.gz)
 * [vog.proteins.all.fa.gz](http://fileshare.csb.univie.ac.at/vog/latest/vog.faa.tar.gz)
-*
+```
+./cat_vog_protein.py vog_protein/*.faa --annotations vog.annotations.tsv.gz >vogdb.fasta
+or
+./build_vogdb.py vog.proteins.all.fa >vogdb.fasta
+```
