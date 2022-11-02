@@ -105,6 +105,7 @@ wget -c https://genome-idx.s3.amazonaws.com/kraken/k2_viral_20210517.tar.gz
 ### KEGG
 * [KEGG](https://www.kegg.jp/)数据连接
 * [ko00001.keg](https://www.kegg.jp/brite/ko00001)
+* [mun00001.keg](https://www.kegg.jp/brite/mun00001.keg)
 ```
 https://www.kegg.jp/entry/ko:K23120
 ```
