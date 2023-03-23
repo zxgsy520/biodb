@@ -42,10 +42,11 @@ wget -c https://ftp.ncbi.nlm.nih.gov/pub/taxonomy/new_taxdump/new_taxdump.tar.gz
 tar -zxvf new_taxdump.tar.gz
 lineage2tax.py fullnamelineage.dmp >species.taxonomy
 get_taxid.py rankedlineage.dmp --kingdom Bacteria >Bacteria.taxid
-wget -c https://ftp.ncbi.nlm.nih.gov/pub/taxonomy/taxdump.tar.gz
-taxonkit list -j 4 --ids 10239 --data-dir ./taxonomy >Viruses.taxid
-blastdbcmd -db ../nr -dbtype "prot" -taxidlist Viruses.taxid -out Viruses.fa
-blastdbcmd -db ../nr -dbtype "prot" -taxidlist Viruses.taxid -out  viruses.fasta2_newtaxid -outfmt "%a %T"
+awk '{print $1}' species.taxonomy |sort -u >all.tax.id
+#wget -c https://ftp.ncbi.nlm.nih.gov/pub/taxonomy/taxdump.tar.gz
+#taxonkit list -j 4 --ids 10239 --data-dir ./taxonomy >Viruses.taxid
+#blastdbcmd -db ../nr -dbtype "prot" -taxidlist Viruses.taxid -out Viruses.fa
+#blastdbcmd -db ../nr -dbtype "prot" -taxidlist Viruses.taxid -out  viruses.fasta2_newtaxid -outfmt "%a %T"
 ```
 * Generate taxonomy files for kraken annotations （生成分类注释文件）
 ```
