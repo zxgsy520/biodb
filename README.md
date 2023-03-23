@@ -50,8 +50,8 @@ awk '{print $1}' species.taxonomy |sort -u >all.tax.id
 ```
 * Generate taxonomy files for kraken annotations （生成分类注释文件）
 ```
-taxonkit lineage all.tax.id --data-dir taxonomy --threads 8 | awk '$2!=""' > lineage.txt
-taxonkit reformat lineage.txt --format "k__{k}|p__{p}|c__{c}|o__{o}|f__{f}|g__{g}|s__{s}" --data-dir taxonomy --threads 8 >kraken.temp_taxonomy 
+taxonkit lineage all.tax.id --data-dir ./new_taxdump --threads 8 | awk '$2!=""' > lineage.txt
+taxonkit reformat lineage.txt --format "k__{k}|p__{p}|c__{c}|o__{o}|f__{f}|g__{g}|s__{s}" --data-dir ./new_taxdump --threads 8 >kraken.temp_taxonomy 
  print_tax.py kraken.temp_taxonomy >kraken.taxonomy #提取第1和第3列，将真菌的Eukaryota替换为Fungi
 ```
 
