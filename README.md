@@ -160,3 +160,9 @@ wget -c http://ftp.ebi.ac.uk/pub/databases/swissprot/release/uniprot_sprot.fasta
 or
 ./build_vogdb.py vog.proteins.all.fa >vogdb.fasta
 ```
+
+### PHI
+* [PHI](http://www.phi-base.org/index.jsp)
+* [PHI](https://github.com/PHI-base/data)
+```
+```
